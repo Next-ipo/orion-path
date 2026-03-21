@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORION PATH | 星と地域をつなぐ旅</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content container fade-in">
+            <h1>ORION PATH – 星と地域をつなぐ旅</h1>
+            <p>地上と宇宙をつなぐ、もうひとつの航路</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#projects" class="glass" style="padding: 1rem 2rem; color: #fff; text-decoration: none;">Explore Projects</a>
+                <a href="https://note.com/next_ipo" target="_blank" class="glass" style="padding: 1rem 2rem; color: var(--accent-blue); text-decoration: none;">View Note</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container section" id="projects">
+        <h2 style="margin-bottom: 3rem; font-size: 2.5rem; text-align: center;">Active Projects</h2>
+        <div class="grid">
+            <div class="card glass">
+                <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">Journey Log – 航路の記録</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">星を追い、地域を巡り、新しい価値を紡ぐ体験の記録。</p>
+                <div id="note-list">
+                    <!-- Dynamic Note List -->
+                </div>
+            </div>
+            <div class="card glass">
+                <h3 style="color: var(--accent-green); margin-bottom: 1rem;">Starry Sky – 星空情報</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">今夜の星空</p>
+                <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; border: 1px solid rgba(0, 255, 120, 0.2);">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                        <span style="font-size: 0.8rem; color: var(--accent-green);">Tonight's Index</span>
+                        <span style="font-size: 1.5rem; font-weight: 800; color: #fff;">A</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card glass">
+                <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">Rocket – ロケット情報</h3>
+                <div style="overflow: hidden; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
+                    <img src="public/rocket_launch_pad.png" alt="Rocket" style="width: 100%; display: block; filter: brightness(0.8);">
+                    <div style="padding: 0.5rem; background: rgba(0,0,0,0.5); text-align: center;">
+                        <small style="color: var(--accent-blue); font-family: var(--font-main);">MISSION: Artemis II</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="container section">
+        <div class="glass card" style="text-align: center; border-color: rgba(0, 255, 120, 0.2);">
+            <h2 style="margin-bottom: 1.5rem;">Identity / Profile</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+               星空×地域×AIを掛け合わせ、<br>
+               「体験」を「価値」に変える創造者。<br><br>
+               星を起点に、観光・教育・発信を横断しながら、<br>
+               地域に新しいワクワクを生み出している。<br><br>
+               写真やAI、ものづくりを通じて、<br>
+               人と地域をつなぐプロジェクトを展開中。
+            </p>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 4rem 0; color: var(--text-secondary);">
+        <p>&copy; 2026 ORION PATH. Built with AI Orchestra.</p>
+    </footer>
+
+    <script src="src/main.js"></script>
+</body>
+</html>
