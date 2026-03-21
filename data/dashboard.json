@@ -1,0 +1,11 @@
+{
+    "date": "2026.03.22",
+    "starry_sky": {
+        "rank": "B",
+        "score": 60
+    },
+    "rocket": {
+        "mission": "Artemis II",
+        "status": "3/20にSLSロケットが発射台（Pad 39B）に到着。4/1の打ち上げに向けて最終カウントダウン体制へ。"
+    }
+}

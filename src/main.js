@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     renderNoteCards();
+    updateDashboard();
 });
 
 /**
@@ -38,4 +39,34 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
+
 document.querySelectorAll('.card').forEach(card => observer.observe(card));
+
+/**
+ * ダッシュボード情報（星空・ロケット）の同期
+ */
+async function updateDashboard() {
+    try {
+        const response = await fetch('data/dashboard.json');
+        if (!response.ok) return;
+        const data = await response.json();
+
+        // 星空情報の更新
+        const starRank = document.getElementById('star-rank');
+        const starScore = document.getElementById('star-score');
+        if (starRank) starRank.textContent = data.starry_sky.rank;
+        if (starScore) starScore.textContent = data.starry_sky.score;
+
+        // ロケット情報の更新
+        const rocketStatus = document.getElementById('rocket-status');
+        if (rocketStatus) {
+            rocketStatus.innerHTML = `
+                <div style="font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary); margin-bottom: 1rem;">
+                    ${data.rocket.status}
+                </div>
+            `;
+        }
+    } catch (e) {
+        console.error('Failed to update dashboard:', e);
+    }
+}

@@ -37,13 +37,16 @@
                 <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">今夜の星空</p>
                 <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; border: 1px solid rgba(0, 255, 120, 0.2);">
                     <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                        <span style="font-size: 0.8rem; color: var(--accent-green);">Tonight's Index</span>
-                        <span style="font-size: 1.5rem; font-weight: 800; color: #fff;">A</span>
+                        <span style="font-size: 0.8rem; color: var(--accent-green);">Score: <span id="star-score">--</span></span>
+                        <span id="star-rank" style="font-size: 1.5rem; font-weight: 800; color: #fff;">-</span>
                     </div>
                 </div>
             </div>
             <div class="card glass">
                 <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">Rocket – ロケット情報</h3>
+                <div id="rocket-status" style="margin-top: 1rem;">
+                    <!-- Dynamic Rocket Status -->
+                </div>
                 <div style="overflow: hidden; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
                     <img src="public/rocket_launch_pad.png" alt="Rocket" style="width: 100%; display: block; filter: brightness(0.8);">
                     <div style="padding: 0.5rem; background: rgba(0,0,0,0.5); text-align: center;">
