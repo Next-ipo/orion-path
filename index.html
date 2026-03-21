@@ -42,15 +42,21 @@
                     </div>
                 </div>
             </div>
-            <div class="card glass">
-                <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">Rocket – ロケット情報</h3>
-                <div id="rocket-status" style="margin-top: 1rem;">
-                    <!-- Dynamic Rocket Status -->
+            <div class="card glass" style="grid-column: span 2;">
+                <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">Rocket – 宇宙ロケット打ち上げ最新情報</h3>
+                <div id="rocket-report" class="report-content">
+                    <!-- Dynamic Full Report -->
+                    <p style="color: var(--text-secondary);">Loading intelligence report...</p>
                 </div>
-                <div style="overflow: hidden; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
-                    <img src="public/rocket_launch_pad.png" alt="Rocket" style="width: 100%; display: block; filter: brightness(0.8);">
-                    <div style="padding: 0.5rem; background: rgba(0,0,0,0.5); text-align: center;">
-                        <small style="color: var(--accent-blue); font-family: var(--font-main);">MISSION: Artemis II</small>
+                <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                    <div style="flex: 1; overflow: hidden; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="public/rocket_launch_pad.png" alt="Rocket" style="width: 100%; display: block; filter: brightness(0.8);">
+                    </div>
+                    <div style="flex: 1;">
+                        <small style="color: var(--accent-blue); font-family: var(--font-main); display: block; margin-bottom: 0.5rem;">MISSION: Artemis II</small>
+                        <div id="rocket-status-summary" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4;">
+                            <!-- Brief Status -->
+                        </div>
                     </div>
                 </div>
             </div>

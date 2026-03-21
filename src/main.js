@@ -58,13 +58,15 @@ async function updateDashboard() {
         if (starScore) starScore.textContent = data.starry_sky.score;
 
         // ロケット情報の更新
-        const rocketStatus = document.getElementById('rocket-status');
-        if (rocketStatus) {
-            rocketStatus.innerHTML = `
-                <div style="font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary); margin-bottom: 1rem;">
-                    ${data.rocket.status}
-                </div>
-            `;
+        const rocketReport = document.getElementById('rocket-report');
+        const rocketStatusSummary = document.getElementById('rocket-status-summary');
+        
+        if (rocketReport && data.rocket.full_html) {
+            rocketReport.innerHTML = data.rocket.full_html;
+        }
+        
+        if (rocketStatusSummary) {
+            rocketStatusSummary.textContent = data.rocket.status;
         }
     } catch (e) {
         console.error('Failed to update dashboard:', e);

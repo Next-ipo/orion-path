@@ -131,3 +131,30 @@ h1, h2, h3 {
   opacity: 1 !important;
 }
 
+/* Report Content Styles */
+.report-content {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.report-content table {
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.report-content th, .report-content td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-content h4:first-child {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .card {
+        grid-column: span 1 !important;
+    }
+}
