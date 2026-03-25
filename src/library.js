@@ -19,9 +19,12 @@ function renderGallery(items, filter = 'all') {
 
     gallery.innerHTML = filteredItems.map(item => `
         <div class="celestial-card glass fade-in">
-            <div style="background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: rgba(255,255,255,0.1); font-weight: 800;">
-                ${item.Name}
-            </div>
+            ${item.Image ? 
+                `<img src="${item.Image}" alt="${item.Name}" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">` :
+                `<div style="background: rgba(0,0,0,0.5); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: rgba(255,255,255,0.1); font-weight: 800;">
+                    ${item.Name}
+                </div>`
+            }
             <div class="celestial-info">
                 <div style="font-weight: 800; color: var(--accent-blue);">${item.Name}</div>
                 <div style="font-size: 0.8rem; color: #fff;">${item.Constellation}</div>
