@@ -91,7 +91,8 @@ def extract_data(log_path):
         return None
 
     # Extract Ippo Index
-    ippo_pattern = r"\u30e9\u30f3\u30af\s+([A-Z])\*\*\s+\((\d+)\s+/\s+100\)"
+    # Flexible pattern for "**ランク A** (93 / 100)" or "ランク A** (93 / 100)"
+    ippo_pattern = r"\*\*?\u30e9\u30f3\u30af\s+([A-Z])\*\*?\s+\(\s*(\d+)\s+/\s+100\)"
     ippo_match = re.search(ippo_pattern, content)
     index_rank = ippo_match.group(1) if ippo_match else "N/A"
     index_score = ippo_match.group(2) if ippo_match else "0"
@@ -114,7 +115,11 @@ def extract_data(log_path):
 
     # Simplified Artemis II status for the card summary
     rocket_status = "No updates."
-    artemis_match = re.search(r"Artemis II.*?\u6700\u65b0\u72b6\u6cc1[^\n]*?[:：]\s*([^\n\*]+)", content)
+    # Look for Artemis II followed by descriptive text
+    artemis_match = re.search(r"Artemis II.*?\*\*\s*[:：]\s*([^\n\*]+)", content)
+    if not artemis_match:
+        artemis_match = re.search(r"Artemis II.*?[:：]\s*([^\n\*]+)", content)
+    
     if artemis_match:
         rocket_status = artemis_match.group(1).strip()
     
