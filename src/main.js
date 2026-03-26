@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderNoteCards() {
     const noteList = document.getElementById('note-list');
     const articles = [
-        { date: "2026.03.08", title: "ロケット見学と至高 of 体験投資", tag: "Magazine", url: "https://note.com/next_ipo" },
+        { date: "2026.03.08", title: "ロケット見学と至高 of 体験投資", tag: "Magazine", url: "https://note.com/next_ipo/magazines" },
         { date: "2026.02.26", title: "カイロスロケット。和歌山奇跡のリトリート", tag: "Travel", url: "https://note.com/next_ipo/n/n5d46266b86ef" },
         { date: "2026.02.14", title: "電脳の海へ。ARグラス越しに見た未来", tag: "Tech", url: "https://note.com/next_ipo/n/nbe17f9a012ce" },
         { date: "2026.02.08", title: "ゴジラホテル。巨大な熱量に触れる夜", tag: "Experience", url: "https://note.com/next_ipo/n/n203c41d6e20d" }
