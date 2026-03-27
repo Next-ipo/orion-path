@@ -54,8 +54,11 @@ async function updateDashboard() {
         // 星空情報の更新
         const starRank = document.getElementById('star-rank');
         const starScore = document.getElementById('star-score');
+        const lastUpdated = document.getElementById('last-updated');
+        
         if (starRank) starRank.textContent = data.starry_sky.rank;
         if (starScore) starScore.textContent = data.starry_sky.score;
+        if (lastUpdated) lastUpdated.textContent = `LAST UPDATED: ${data.date}`;
 
         // ロケット情報の更新
         const rocketReport = document.getElementById('rocket-report');

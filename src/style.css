@@ -59,6 +59,25 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
+.update-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1rem;
+    background: var(--glass);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-family: var(--font-main);
+    letter-spacing: 0.05em;
+    z-index: 10;
+    pointer-events: none;
+    text-transform: uppercase;
+}
+
 .hero-bg {
   position: absolute;
   top: 0;
