@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import subprocess
 from datetime import datetime
 
 # Path definition
@@ -153,6 +154,33 @@ def main():
     
     print(f"Successfully updated: {DATA_FILE}")
     print(json.dumps(data, ensure_ascii=False, indent=2))
+
+    # Git Push Logic
+    try:
+        print("Pushing updates to GitHub...")
+        # Change directory to project root for git commands
+        os.chdir(PROJECT_DIR)
+        
+        # 1. Add
+        subprocess.run(["git", "add", "data/dashboard.json"], check=True)
+        
+        # 2. Check if there are changes to commit
+        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
+        if status.stdout.strip():
+            # 3. Commit
+            commit_msg = f"chore: update dashboard for {data['date']}"
+            subprocess.run(["git", "commit", "-m", commit_msg], check=True)
+            
+            # 4. Push
+            subprocess.run(["git", "push", "origin", "main"], check=True)
+            print("Successfully pushed to GitHub!")
+        else:
+            print("No changes detected in dashboard.json. Skipping push.")
+            
+    except subprocess.CalledProcessError as e:
+        print(f"Error during Git operations: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main()
